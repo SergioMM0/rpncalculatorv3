@@ -33,7 +33,7 @@ class CustomElevatedButton extends ElevatedButton {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30.0),
           ),
-          padding: EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(30.0),
         ),
       );
 }

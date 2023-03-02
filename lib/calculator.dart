@@ -23,7 +23,7 @@ class Calculator extends StatefulWidget {
 }
 
 class _CalculatorState extends State<Calculator> {
-  String display = '';
+  String display = '222';
 
   void buttonPressed(String buttonText) {
     setState(() {
@@ -49,16 +49,15 @@ class _CalculatorState extends State<Calculator> {
             height: 16.0,
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisSize: MainAxisSize.max,
             children: [
-              CustomElevatedButton.orangeGradient(
-                  child: const Text('+'), onPressed: () {}),
-              CustomElevatedButton.orangeGradient(
-                  child: const Text('AC'), onPressed: () {}),
-              CustomElevatedButton.orangeGradient(
-                  child: const Text('%'), onPressed: () {}),
-              CustomElevatedButton.orangeGradient(
-                  child: const Text('/'), onPressed: () {}),
+              Padding(
+                padding: EdgeInsets.only(right: MediaQuery.of(context).size.width * 0.102),
+                child: CustomElevatedButton.orangeGradient(
+                    child: const Text('/'), onPressed: () {}
+                ),
+              ),
             ],
           ),
           const SizedBox(
