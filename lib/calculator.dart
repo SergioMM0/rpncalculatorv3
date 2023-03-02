@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'custom_elevated_button.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,426 +35,98 @@ class _CalculatorState extends State<Calculator> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Calculator'),
+        title: const Text('Calculator'),
+        backgroundColor: Colors.grey,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             display,
-            style: TextStyle(fontSize: 32.0),
+            style: const TextStyle(fontSize: 32.0),
           ),
-          SizedBox(
+          const SizedBox(
             height: 16.0,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('AC'),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(16.0),
-                  primary: Colors.orange,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                  // Add the gradient property here
-                  // with a BoxDecoration and a gradient
-                  // from orange to black
-
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('C'),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(16.0),
-                  primary: Colors.orange,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                  // Add the gradient property here
-                  // with a BoxDecoration and a gradient
-                  // from orange to black
-
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('%'),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(16.0),
-                  primary: Colors.orange,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                  // Add the gradient property here
-                  // with a BoxDecoration and a gradient
-                  // from orange to black
-
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('/'),
-                style: ElevatedButton.styleFrom(
-
-                  primary: Colors.orange,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                  // Add the gradient property here
-                  // with a BoxDecoration and a gradient
-                  // from orange to black
-
-                ),
-              ),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('+'), onPressed: () {}),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('AC'), onPressed: () {}),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('%'), onPressed: () {}),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('/'), onPressed: () {}),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 16.0,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(
-                onPressed: () {
-                  buttonPressed('7');
-                },
-                child: Text('7'),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(16.0),
-                  primary: Colors.white,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  buttonPressed('8');
-                },
-                child: Text('8'),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(16.0),
-                  primary: Colors.white,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  buttonPressed('9');
-                },
-                child: Text('9'),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(16.0),
-                  primary: Colors.white,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('x'),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(16.0),
-                  primary: Colors.orange,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                  // Add the gradient property here
-                  // with a BoxDecoration and a gradient
-                  // from orange to black
-
-                ),
-              ),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('7'), onPressed: () {}),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('8'), onPressed: () {}),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('9'), onPressed: () {}),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('x'), onPressed: () {}),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 16.0,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(
-                onPressed: () {
-                  buttonPressed('4');
-                },
-                child: Text('4'),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(16.0),
-                  primary: Colors.white,
-                  onPrimary:
-                  Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  buttonPressed('5');
-                },
-                child: Text('5'),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(16.0),
-                  primary: Colors.white,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  buttonPressed('6');
-                },
-                child: Text('6'),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(16.0),
-                  primary: Colors.white,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('-'),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(16.0),
-                  primary: Colors.orange,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                  // Add the gradient property here
-                  // with a BoxDecoration and a gradient
-                  // from orange to black
-                ),
-              ),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('4'), onPressed: () {}),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('5'), onPressed: () {}),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('6'), onPressed: () {}),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('-'), onPressed: () {}),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 16.0,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(
-                onPressed: () {
-                  buttonPressed('1');
-                },
-                child: Text('1'),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(16.0),
-                  primary: Colors.white,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  buttonPressed('2');
-                },
-                child: Text('2'),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(16.0),
-                  primary: Colors.white,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  buttonPressed('3');
-                },
-                child: Text('3'),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(16.0),
-                  primary: Colors.white,
-                  onPrimary: Colors.black, 
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('+'),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(16.0),
-                  primary: Colors.orange,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                  // Add the gradient property here
-                  // with a BoxDecoration and a gradient
-                  // from orange to black
-
-                ),
-              ),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('1'), onPressed: () {}),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('2'), onPressed: () {}),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('3'), onPressed: () {}),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('+'), onPressed: () {}),
             ],
           ),
-          SizedBox(
-            height: 16.0,
+          const SizedBox(
+            height: 40.0,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('0'),
-                style: ElevatedButton.styleFrom(
-                  shape: StadiumBorder(),
-                  padding: EdgeInsets.fromLTRB(32.0, 16.0, 128.0, 16.0),
-                  primary: Colors.white,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('.'),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(16.0),
-                  primary: Colors.white,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                child: Text('='),
-                style: ElevatedButton.styleFrom(
-                  shape: StadiumBorder(),
-                  padding: EdgeInsets.fromLTRB(32.0, 16.0, 128.0, 16.0),
-                  primary: Colors.orange,
-                  onPrimary: Colors.black,
-                  textStyle: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  onSurface: Colors.grey,
-                  shadowColor: Colors.black,
-                  elevation: 2.0,
-                  // Add the gradient property here
-                  // with a BoxDecoration and a gradient
-                  // from orange to black
-
-                ),
-              ),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('Undo'), onPressed: () {}),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('0'), onPressed: () {}),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('.'), onPressed: () {}),
+              CustomElevatedButton.orangeGradient(
+                  child: const Text('Enter'), onPressed: () {}),
             ],
           ),
         ],
-      )
-      ,
+      ),
     );
   }
 }
